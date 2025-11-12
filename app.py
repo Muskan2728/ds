@@ -14,6 +14,7 @@ import wfdb.processing
 from sklearn.preprocessing import StandardScaler
 import tensorflow as tf
 import os
+os.system("pip install wfdb")
 import pandas as pd
 # Try importing wfdb safely
 try:
