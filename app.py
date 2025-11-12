@@ -15,7 +15,14 @@ from sklearn.preprocessing import StandardScaler
 import tensorflow as tf
 import os
 import pandas as pd
-
+# Try importing wfdb safely
+try:
+    import wfdb
+    import wfdb.processing
+    WFDB_AVAILABLE = True
+except ImportError:
+    WFDB_AVAILABLE = False
+    st.warning("⚠️ 'wfdb' library not found. Install it using: pip install wfdb")
 # --- 1. Load Model ---
 @st.cache_resource
 def load_my_model():
